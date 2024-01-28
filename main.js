@@ -17,6 +17,7 @@ Read the terminal output before and after to see the difference
 export function start() {
   //your code here
   // return true
+  return true;
 };
 
 /******************************************************************************
@@ -31,9 +32,19 @@ received is an even number.
 HINT: Use the modulo operator (%) Google it! 😊
 ******************************************************************************/
 
-export const oddOrEven = () => {
-  //your code here
+
+
+export const oddOrEven = (number) => {
+  if(number % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+  
 };
+
+
+  //your code here
 
 /******************************************************************************
 2.
@@ -47,7 +58,8 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
 
-export function makeMeLoud() {
+export function makeMeLoud(whatever) {
+  return whatever.toUpperCase() + '!';
   //your code here
 }
 
@@ -72,8 +84,30 @@ The function should return:
 
 ******************************************************************************/
 
-export const greeter = () => {
-  //your code here
+export const greeter = (name,hour) => {
+  if (hour< 0 || hour > 23) {
+    return `Invalid time`;
+  } 
+
+  if (hour >= 0 && hour <=5) {
+    return `Good night ${name}`;
+  }
+
+  if (hour >= 6 && hour <= 11) {
+    return `Good morning ${name}`;
+  }
+
+  if (hour >= 12 && hour <= 17) {
+    return `Good day ${name}`; 
+  }
+
+  if (hour >=18 && hour <= 23) {
+  return `Good evening ${name}`;
+}
+
+
+  
+  // your code here
 };
 
 /******************************************************************************
@@ -90,9 +124,16 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 ******************************************************************************/
 
-export function arrayTrimmer() {
+export function arrayTrimmer(weekdays) {
+const skippedWeekdays = weekdays.slice(1, -1);
+return skippedWeekdays;
   //your code here
 }
+
+const allWeekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const result = arrayTrimmer(allWeekDays);
+
+console.log(result)
 
 /******************************************************************************
 5.
@@ -113,9 +154,14 @@ Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
 
-export const cleanAndFun = () => {
+export const cleanAndFun = (text) => {
+  const changedText= text.replace(/hard/g, "fun").trim();
+  return changedText;
   //your code here
 };
+
+
+console.log(cleanAndFun("javascript is hard"))
 
 /******************************************************************************
 6.
@@ -137,7 +183,8 @@ Use array methods to do the following:
  Return the resulting array.
 ******************************************************************************/
 
-export function marvelEditor() {
+export function marvelEditor(superHeroes) {
+  
   //your code here
 }
 
